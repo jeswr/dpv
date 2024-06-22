@@ -1,0 +1,9 @@
+@startuml
+!include include/style.plantuml
+
+class Thing
+class LegalBasis
+
+Thing -> LegalBasis: hasLegalBasis
+
+@enduml

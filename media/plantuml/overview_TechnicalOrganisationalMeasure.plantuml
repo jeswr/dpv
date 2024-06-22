@@ -1,0 +1,18 @@
+@startuml
+!include include/style.plantuml
+left to right direction
+'top to bottom direction
+
+class Thing
+class TechnicalMeasure
+class OrganisationalMeasure
+class TechnicalOrganisationalMeasure
+
+TechnicalMeasure --|> TechnicalOrganisationalMeasure
+OrganisationalMeasure --|> TechnicalOrganisationalMeasure
+
+Thing -> TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure
+Thing -> OrganisationalMeasure : hasOrganisationalMeasure
+Thing -> TechnicalMeasure : hasTechnicalMeasure
+
+@enduml

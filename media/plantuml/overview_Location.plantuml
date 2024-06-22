@@ -1,0 +1,20 @@
+@startuml
+!include include/style.plantuml
+''left to right direction
+top to bottom direction
+
+class Thing
+class Location
+class Authority
+class Law
+class Country
+
+Country --|> Location
+Thing --> Authority: hasAuthority
+Authority --> Thing: isAuthorityFor
+Thing --> Location: hasLocation
+Thing --> Location: hasJurisdiction
+Thing --> Country: hasCountry
+Location --> Law: hasApplicableLaw
+
+@enduml

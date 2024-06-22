@@ -1,0 +1,15 @@
+@startuml
+!include include/style.plantuml
+left to right direction
+'top to bottom direction
+
+class Thing
+class Risk
+class RiskMitigationMeasure
+class TechnicalOrganisationalMeasure
+
+RiskMitigationMeasure --|> TechnicalOrganisationalMeasure
+RiskMitigationMeasure --> Risk : mitigatesRisk
+Thing --> Risk : hasRisk
+
+@enduml

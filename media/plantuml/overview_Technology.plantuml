@@ -1,0 +1,13 @@
+@startuml
+!include include/style.plantuml
+'left to right direction
+top to bottom direction
+
+class Thing
+class Technology
+
+Thing -> Technology: isImplementedUsingTechnology
+Technology --> Thing: implements
+
+
+@enduml

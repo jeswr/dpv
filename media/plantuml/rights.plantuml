@@ -1,0 +1,35 @@
+@startuml
+!include include/style.plantuml
+left to right direction
+
+class Thing
+class Right
+class Notice
+class DataSubjectRight
+class PassiveRight
+class ActiveRight
+class Record
+class RightExerciseNotice
+class RightFulfilmentNotice
+class RightNonFulfilmentNotice
+class RightExerciseRecord
+class RightExerciseActivity
+class RequestStatus
+
+Thing --> Right : hasRight
+Thing --> Notice : hasNotice
+
+Right <|-- DataSubjectRight
+Right <|-- PassiveRight
+Right <|-- ActiveRight
+
+Notice <|-- RightExerciseNotice
+Notice <|-- RightFulfilmentNotice
+Notice <|-- RightNonFulfilmentNotice
+
+RightExerciseRecord -|> Record
+RightExerciseRecord --> RightExerciseActivity : dct:hasPart
+RightExerciseActivity -> RightExerciseActivity : isBefore/isAfter
+RightExerciseActivity --> RequestStatus : hasStatus
+
+@enduml
