@@ -1,15 +1,15 @@
 @startuml
 !include style.plantuml
-'left to right direction
-top to bottom direction
+left to right direction
+'top to bottom direction
 
-class Thing
+class Thing #silver
 class Representative
 class DataController
 class DataProtectionOfficer
 
-Thing -> DataController: hasDataController
-DataController -> Representative: hasRepresentative
-Representative <|- DataProtectionOfficer
+Thing --> DataController: hasDataController
+DataController --> Representative: hasRepresentative
+Representative <|-- DataProtectionOfficer
 
 @enduml

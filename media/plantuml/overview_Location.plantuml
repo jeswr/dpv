@@ -1,9 +1,9 @@
 @startuml
 !include style.plantuml
-''left to right direction
-top to bottom direction
+left to right direction
+'top to bottom direction
 
-class Thing
+class Thing #silver
 class Location
 class Authority
 class Law

@@ -1,7 +1,7 @@
 @startuml
 !include style.plantuml
 left to right direction
-''top to bottom direction
+'top to bottom direction
 
 class c1 as "Concept"
 class c2 as "Concept"

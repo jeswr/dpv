@@ -3,22 +3,20 @@
 left to right direction
 'top to bottom direction
 
-class Thing
+class Thing #silver
 class DataProcessor
 class DataController
 class ThirdParty
 class Recipient
 
-DataController -[hidden]- DataProcessor
-DataController -[hidden]- ThirdParty
+Recipient <|-- ThirdParty
+Recipient <|-- DataController
+Recipient <|-- DataProcessor
 
-DataController -|> Recipient
-DataProcessor -|> Recipient
-ThirdParty -|> Recipient
+Thing --> Recipient : hasRecipient
+Thing --> DataController: hasRecipientDataController
+Thing --> DataProcessor: hasRecipientDataProcessor
+Thing --> ThirdParty : hasRecipientThirdParty
 
-Thing -> Recipient : hasRecipient
-Thing -> DataController: hasRecipientDataController
-Thing -> DataProcessor: hasRecipientDataProcessor
-Thing -> ThirdParty : hasRecipientThirdParty
 
 @enduml

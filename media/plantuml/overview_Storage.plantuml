@@ -2,15 +2,20 @@
 !include style.plantuml
 left to right direction
 
-class Thing
-class Processing
-class DataSource
-class ProcessingContext
-class Context
+class Thing #silver
+class StorageDuration
+class StorageLocation
+class StorageDeletion
+class StorageRestoration
+class StorageCondition
 
-Thing --> Processing : hasProcessing
-Processing --> DataSource: hasDataSource
-Processing --> ProcessingContext : hasContext
-ProcessingContext --|> Context
+Thing --> StorageCondition: hasStorage
+Thing --> StorageDuration : hasDuration
+Thing --> StorageLocation: hasLocation
+
+StorageDuration --|> StorageCondition
+StorageLocation --|> StorageCondition
+StorageDeletion --|> StorageCondition
+StorageRestoration --|> StorageCondition
 
 @enduml

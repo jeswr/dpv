@@ -1,0 +1,36 @@
+#+TITLE: PlantUML diagram sources
+* Figures in Primer
+1. [X] [[file:concepts_relations.plantuml][Concepts / Relationships]]
+2. [X] [[file:dpv_packages.plantuml][DPV Packages]]
+3. [X] [[file:dpv_core.plantuml][DPV Core]]
+4. [X] [[file:overview_Purpose.plantuml][Purpose]]
+5. [X] [[file:overview_PD.plantuml][Data / PersonalData]]
+6. [X] [[file:overview_Processing.plantuml][Processing]]
+7. [X] [[file:overview_Storage.plantuml][Processing and Storage Conditions]]
+8. [X] [[file:overview_LegalBasis.plantuml][Legal Basis]]
+9. [X] [[file:overview_Entities.plantuml][Entities]]
+10. [X] [[file:overview_DataController.plantuml][Data Controller]]
+11. [X] [[file:overview_DataSubject.plantuml][Data Subject]]
+12. [X] [[file:overview_Recipient.plantuml][Recipient]]
+13. [X] [[file:overview_TechnicalOrganisationalMeasure.plantuml][TOMs]]
+14. [X] [[file:overview_Location.plantuml][Loc & Jur]]
+15. [X] [[file:overview_Risk.plantuml][Risk]]
+16. [X] [[file:overview_Technology.plantuml][Technology]]
+17. [X] [[file:rights.plantuml][Rights]]
+18. [ ] Purpose
+19. [ ] Data / PersonalData
+20. [ ] Processing Operations
+21. [ ] Legal Basis
+22. [ ] Consent
+23. [ ] Entities
+24. [ ] Entity Descriptions
+25. [ ] Legal Roles
+26. [ ] Organisation  Categories
+27. [ ] Data Subjects
+28. [ ]  Technical Measures
+29. [ ]  Organizational Measures
+30. [X] !!  [[file:ImpactAssessment.plantuml][ImpactAssessments]]: new diagram, text needs update
+31. [ ] Contextual Information
+32. [X] [[file:risk.plantuml][Risk Assessment]]
+33. [X]  [[file:Consequences.plantuml][Consequences and Impacts]]
+34. [X] [[file:rights.plantuml][Rights and Rights Exercise]]

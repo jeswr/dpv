@@ -3,13 +3,13 @@
 left to right direction
 'top to bottom direction
 
-class Thing
+class Thing #silver
 class Risk
 class RiskMitigationMeasure
 class TechnicalOrganisationalMeasure
 
-RiskMitigationMeasure --|> TechnicalOrganisationalMeasure
-RiskMitigationMeasure --> Risk : mitigatesRisk
+TechnicalOrganisationalMeasure <|- RiskMitigationMeasure
+Risk <-- RiskMitigationMeasure : mitigatesRisk
 Thing --> Risk : hasRisk
 
 @enduml

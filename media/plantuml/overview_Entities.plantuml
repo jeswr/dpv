@@ -2,7 +2,7 @@
 !include style.plantuml
 left to right direction
 
-class Thing
+class Thing #silver
 class Representative
 class DataController
 class DataProcessor
@@ -13,29 +13,21 @@ class LegalEntity
 class NaturalPerson
 class Entity
 
-Representative -|> LegalEntity 
-DataController -|> LegalEntity
-DataProcessor -|> LegalEntity
-ThirdParty -|> LegalEntity
-Authority -|> LegalEntity
-DataSubject -|> LegalEntity
-DataSubject -|> NaturalPerson
-LegalEntity -|> Entity
-NaturalPerson -|> Entity
+Representative --|> LegalEntity 
+DataController --|> LegalEntity
+DataProcessor --|> LegalEntity
+ThirdParty --|> LegalEntity
+Authority --|> LegalEntity
+DataSubject --|> LegalEntity
+DataSubject --|> NaturalPerson
+LegalEntity --|> Entity
+NaturalPerson --|> Entity
 
-Thing -> Representative: hasRepresentative
-Thing -> DataController: hasDataController
-Thing -> DataProcessor: hasDataProcessor
-Thing -> ThirdParty: hasThirdParty
-Thing -> Authority: hasAuthority
-Thing -> DataSubject: hasDataSubject
-
-Representative -[hidden]d- DataController
-DataController -[hidden]d- DataProcessor
-DataProcessor -[hidden]d- ThirdParty
-ThirdParty -[hidden]d- Authority
-Authority -[hidden]d- DataSubject
-LegalEntity -[hidden]d- NaturalPerson
-
+Thing --> Representative: hasRepresentative
+Thing --> DataController: hasDataController
+Thing --> DataProcessor: hasDataProcessor
+Thing --> ThirdParty: hasThirdParty
+Thing --> Authority: hasAuthority
+Thing --> DataSubject: hasDataSubject
 
 @enduml

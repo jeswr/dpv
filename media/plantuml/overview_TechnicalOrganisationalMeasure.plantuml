@@ -3,7 +3,7 @@
 left to right direction
 'top to bottom direction
 
-class Thing
+class Thing #silver
 class TechnicalMeasure
 class OrganisationalMeasure
 class TechnicalOrganisationalMeasure
@@ -11,8 +11,8 @@ class TechnicalOrganisationalMeasure
 TechnicalMeasure --|> TechnicalOrganisationalMeasure
 OrganisationalMeasure --|> TechnicalOrganisationalMeasure
 
-Thing -> TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure
-Thing -> OrganisationalMeasure : hasOrganisationalMeasure
-Thing -> TechnicalMeasure : hasTechnicalMeasure
+Thing --> TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure
+Thing --> OrganisationalMeasure : hasOrganisationalMeasure
+Thing --> TechnicalMeasure : hasTechnicalMeasure
 
 @enduml

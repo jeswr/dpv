@@ -1,11 +1,12 @@
 @startuml
 !include style.plantuml
+left to right direction
 
-class Thing
+class Thing #silver
 class Purpose
 class Sector
 
-Thing -> Purpose : hasPurpose
-Purpose -> Sector : hasSector
+Thing --> Purpose : hasPurpose
+Purpose --> Sector : hasSector
 
 @enduml

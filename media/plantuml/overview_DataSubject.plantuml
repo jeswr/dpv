@@ -1,15 +1,15 @@
 @startuml
 !include style.plantuml
-'left to right direction
-top to bottom direction
+left to right direction
+'top to bottom direction
 
-class Thing
+class Thing #silver
 class VulnerableDataSubject
 class DataSubject
 class Child
 
-Thing -> DataSubject: hasDataSubject
-DataSubject <|- Child
-DataSubject <|- VulnerableDataSubject
+Thing --> DataSubject: hasDataSubject
+DataSubject <|-- Child
+DataSubject <|-- VulnerableDataSubject
 
 @enduml

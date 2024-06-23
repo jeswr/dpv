@@ -1,9 +1,10 @@
 @startuml
 !include style.plantuml
+left to right direction
 
-class Thing
+class Thing #silver
 class LegalBasis
 
-Thing -> LegalBasis: hasLegalBasis
+Thing --> LegalBasis: hasLegalBasis
 
 @enduml

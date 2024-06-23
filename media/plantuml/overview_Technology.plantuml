@@ -1,12 +1,12 @@
 @startuml
 !include style.plantuml
-'left to right direction
-top to bottom direction
+left to right direction
+'top to bottom direction
 
-class Thing
+class Thing #silver
 class Technology
 
-Thing -> Technology: isImplementedUsingTechnology
+Thing --> Technology: isImplementedUsingTechnology
 Technology --> Thing: implements
 
 
