@@ -17,8 +17,8 @@
 15. [X] [[file:overview_Risk.plantuml][Risk]]
 16. [X] [[file:overview_Technology.plantuml][Technology]]
 17. [X] [[file:rights.plantuml][Rights]]
-18. [ ] Purpose
-19. [ ] Data / PersonalData
+18. [X] [[file:purpose-2.plantuml][Purpose]]
+19. [X] [[file:PersonalData.plantuml][Data / PersonalData]]: missing parent-relationships?
 20. [ ] Processing Operations
 21. [ ] Legal Basis
 22. [ ] Consent
