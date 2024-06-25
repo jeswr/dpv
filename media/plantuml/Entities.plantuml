@@ -1,0 +1,125 @@
+@startuml
+!include style.plantuml
+left to right direction
+
+class Thing #silver
+package dpv {
+	class Entity
+	class LegalEntity
+	class Representative
+	class NaturalPerson
+
+	class DataController
+	class JointDataControllers
+	class DataExporter
+	class Recipient
+	class DataImporter
+	class DataProcessor
+	class ThirdParty
+	class ServiceConsumer
+	class ServiceProvider
+
+	class Organisation
+	class GovernmentalOrganisation
+	class Authority
+	class DataProtectionAuthority
+	class NationalAuthority
+	class RegionalAuthority
+	class SupraNationalAuthority
+
+	class AcademicScientificOrganisation
+	class ForProfitOrganisation
+	class GovernmentalOrganisation
+	class IndustryConsortium
+	class InternationalOrganisation
+	class NonGovernmentalOrganisation
+	class NonProfitOrganisation
+
+	class DataSubject
+	class Adult
+	class Applicant
+	class Child
+	class Citizen
+	class Consumer
+	class Customer
+	class Client
+	class Employee
+	class GuardianOfDataSubject
+	class Immigrant
+	class JobApplicant
+	class Member
+	class NonCitizen
+	class ParentOfDataSubject
+	class Participant
+	class Patient
+	class Student
+	class Subscriber
+	class Tourist
+	class User
+	class Visitor
+	class VulnerableDataSubject
+	class AsylumSeeker
+	class ElderlyDataSubject
+	class MentallyVulnerableDataSubject
+	
+}
+
+Thing --> Entity: hasEntity
+Entity <|-- LegalEntity
+Entity <|-- NaturalPerson
+LegalEntity <|-- Representative
+
+LegalEntity <|-- DataController
+DataController <|-- JointDataControllers
+LegalEntity <|-- DataExporter
+LegalEntity <|-- Recipient
+Recipient <|-- DataImporter
+Recipient <|-- DataProcessor
+Recipient <|-- ThirdParty
+LegalEntity <|-- ServiceConsumer
+LegalEntity <|-- ServiceProvider
+
+LegalEntity <|-- Organisation
+Organisation <|-- GovernmentalOrganisation
+GovernmentalOrganisation <|-- Authority
+Authority <|-- DataProtectionAuthority
+Authority <|-- NationalAuthority
+Authority <|-- RegionalAuthority
+Authority <|-- SupraNationalAuthority
+
+Organisation <|-- AcademicScientificOrganisation
+Organisation <|-- ForProfitOrganisation
+Organisation <|-- IndustryConsortium
+Organisation <|-- InternationalOrganisation
+Organisation <|-- NonGovernmentalOrganisation
+Organisation <|-- NonProfitOrganisation
+
+NaturalPerson <|-- DataSubject
+DataSubject <|-- Adult
+DataSubject <|-- Applicant
+DataSubject <|-- Child
+DataSubject <|-- Citizen
+DataSubject <|-- Consumer
+DataSubject <|-- Customer
+Customer <|-- Client
+DataSubject <|-- Employee
+DataSubject <|-- GuardianOfDataSubject
+DataSubject <|-- Immigrant
+DataSubject <|-- JobApplicant
+DataSubject <|-- Member
+DataSubject <|-- NonCitizen
+DataSubject <|-- ParentOfDataSubject
+DataSubject <|-- Participant
+DataSubject <|-- Patient
+DataSubject <|-- Student
+DataSubject <|-- Subscriber
+DataSubject <|-- Tourist
+DataSubject <|-- User
+DataSubject <|-- Visitor
+DataSubject <|-- VulnerableDataSubject
+VulnerableDataSubject <|-- AsylumSeeker
+VulnerableDataSubject <|-- ElderlyDataSubject
+VulnerableDataSubject <|-- MentallyVulnerableDataSubject
+
+
+@enduml

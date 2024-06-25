@@ -1,0 +1,44 @@
+@startuml
+!include style.plantuml
+'left to right direction
+
+class Thing #silver
+package dpv {
+	class LegalBasis
+	class Consent
+	class DataTransferLegalBasis
+	class LegalObligation
+	class LegitimateInterest
+	class LegitimateInterestOfController
+	class LegitimateInterestOfDataSubject
+	class LegitimateInterestOfThirdParty
+	class OfficialAuthorityOfController
+	class PublicInterest
+	class VitalInterest
+	class VitalInterestOfNaturalPerson
+	class InformedConsent
+	class ExpressedConsent
+	class ImpliedConsent
+	class UninformedConsent
+}
+
+Thing --> LegalBasis: hasLegalBasis
+
+LegalBasis <|-- Consent
+LegalBasis <|-- DataTransferLegalBasis
+LegalBasis <|-- LegalObligation
+LegalBasis <|-- LegitimateInterest
+LegitimateInterest <|-- LegitimateInterestOfController
+LegitimateInterest <|-- LegitimateInterestOfDataSubject
+LegitimateInterest <|-- LegitimateInterestOfThirdParty
+LegalBasis <|-- OfficialAuthorityOfController
+LegalBasis <|-- PublicInterest
+LegalBasis <|-- VitalInterest
+VitalInterest <|-- VitalInterestOfNaturalPerson
+Consent <|-- InformedConsent
+InformedConsent <|-- ExpressedConsent
+InformedConsent <|-- ImpliedConsent
+Consent <|-- UninformedConsent
+
+
+@enduml

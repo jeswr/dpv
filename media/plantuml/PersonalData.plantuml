@@ -57,7 +57,7 @@ PersonalData <|-- DerivedPersonalData
 PersonalData <|-- GeneratedPersonalData
 PersonalData <|-- IdentifyingPersonalData
 PersonalData <|-- PseudonymisedData
-PersonalData <|-[#red]- SensitivePersonalData
+PersonalData <|-- SensitivePersonalData
 
 SensitiveData <|-- SensitiveNonPersonalData
 SensitiveData <|-- SensitivePersonalData

@@ -19,10 +19,10 @@
 17. [X] [[file:rights.plantuml][Rights]]
 18. [X] [[file:purpose-2.plantuml][Purpose]]
 19. [X] [[file:PersonalData.plantuml][Data / PersonalData]]: missing parent-relationships?
-20. [ ] Processing Operations
-21. [ ] Legal Basis
-22. [ ] Consent
-23. [ ] Entities
+20. [X] [[file:processing.plantuml][Processing Operations]]: only first level children
+21. [X] [[file:legal_bases.plantuml][Legal Basis]]
+22. [X] [[file:Consent.plantuml][Consent]]
+23. [X] [[file:Entities.plantuml][Entities]]
 24. [ ] Entity Descriptions
 25. [ ] Legal Roles
 26. [ ] Organisation  Categories

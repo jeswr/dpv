@@ -1,0 +1,51 @@
+@startuml
+!include style.plantuml
+left to right direction
+
+class Thing #silver
+package dpv {
+	class Purpose
+	class Sector
+	class AccountManagement
+	class CommercialPurpose
+	class CommunicationManagement
+	class CommunicationForCustomerCare
+	class CustomerManagement
+	class EnforceSecurity
+	class EstablishContractualAgreement
+	class FulfilmentOfObligation
+	class HumanResourceManagement
+	class Marketing
+	class NonCommercialPurpose
+	class OrganisationGovernance
+	class Personalisation
+	class PublicBenefit
+	class RecordManagement
+	class ResearchAndDevelopment
+	class ServiceProvision
+	class VendorManagement
+}
+Thing --> Purpose : hasPurpose >
+Purpose ---> Sector : hasSector >
+Purpose <|--- AccountManagement
+Purpose <|--- CommercialPurpose
+Purpose <|--- CommunicationManagement
+Purpose <|--- CommunicationForCustomerCare
+Purpose <|--- CustomerManagement
+Purpose <|--- EnforceSecurity
+Purpose <|--- EstablishContractualAgreement
+Purpose <|--- FulfilmentOfObligation
+Purpose <|--- HumanResourceManagement
+Purpose <|--- Marketing
+Purpose <|--- NonCommercialPurpose
+Purpose <|--- OrganisationGovernance
+Purpose <|--- Personalisation
+Purpose <|--- PublicBenefit
+Purpose <|--- RecordManagement
+Purpose <|--- ResearchAndDevelopment
+Purpose <|--- ServiceProvision
+Purpose <|--- VendorManagement
+
+
+
+@enduml
