@@ -1,7 +1,9 @@
 @startuml
+
 !include style.plantuml
-'left to right direction
-top to bottom direction
+left to right direction
+'top to bottom direction
+'skinparam linetype ortho
 
 class Thing #silver
 package dpv {
@@ -12,10 +14,10 @@ package dpv {
 	class PhysicalMeasure
 }
 
-TechnicalOrganisationalMeasure <|-- TechnicalMeasure
-TechnicalOrganisationalMeasure <|-- OrganisationalMeasure
-TechnicalOrganisationalMeasure <|-- LegalMeasure
-TechnicalOrganisationalMeasure <|-- PhysicalMeasure
+TechnicalOrganisationalMeasure <|-u- TechnicalMeasure
+TechnicalOrganisationalMeasure <|-u- OrganisationalMeasure
+TechnicalOrganisationalMeasure <|-u- LegalMeasure
+TechnicalOrganisationalMeasure <|-u- PhysicalMeasure
 
 Thing -- TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure >
 Thing -- OrganisationalMeasure : hasOrganisationalMeasure >

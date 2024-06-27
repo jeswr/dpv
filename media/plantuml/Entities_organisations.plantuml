@@ -1,28 +1,15 @@
-@startuml
+@startmindmap
 !include style.plantuml
-left to right direction
 
-package dpv {
-	class Organisation
-	class IndustryConsortium
-	class InternationalOrganisation
-	class NonProfitOrganisation
-	class ForProfitOrganisation
-	class GovernmentalOrganisation
-	class NonGovernmentalOrganisation
-	class ParentLegalEntity
-	class SubsidiaryLegalEntityclass
-	class AcademicScientificOrganisationclass
-}
++ Organisation
+++ IndustryConsortium
+++ InternationalOrganisation
+++ NonProfitOrganisation
+++ ForProfitOrganisation
+-- GovernmentalOrganisation
+-- NonGovernmentalOrganisation
+-- ParentLegalEntity
+-- SubsidiaryLegalEntityclass
+-- AcademicScientificOrganisationclass
 
-Organisation <|-- IndustryConsortium
-Organisation <|-- InternationalOrganisation
-Organisation <|-- NonProfitOrganisation
-Organisation <|-- ForProfitOrganisation
-Organisation <|-- GovernmentalOrganisation
-Organisation <|-- NonGovernmentalOrganisation
-Organisation <|-- ParentLegalEntity
-Organisation <|-- SubsidiaryLegalEntityclass
-Organisation <|-- AcademicScientificOrganisationclass
-
-@enduml
+@endmindmap

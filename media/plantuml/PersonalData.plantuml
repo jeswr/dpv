@@ -1,66 +1,31 @@
-@startuml
+@startmindmap
 !include style.plantuml
-left to right direction
 
-class Thing #silver
-package dpv {
-	class Data
-	class PersonalData
-	class CollectedData
-	class CollectedPersonalData
-	class ProvidedData
-	class CommerciallyConfidentialData
-	class ConfidentialData
-	class DerivedData
-	class DerivedPersonalData
-	class GeneratedData
-	class IncorrectData
-	class InferredData
-	class IntellectualPropertyData
-	class NonPersonalData
-	class ObservedData
-	class SensitiveData
-	class StatisticallyConfidentialData
-	class UnverifiedData
-	class VerifiedData
-}
-Thing -- PersonalData : hasPersonalData >
-Thing -- Data : hasData >
-Data <|-- CollectedData
-Data <|-- CommerciallyConfidentialData
-Data <|-- ConfidentialData
-Data <|-- DerivedData
-Data <|-- GeneratedData
-Data <|-- IncorrectData
-Data <|-- PersonalData
-Data <|-- NonPersonalData
-Data <|-- SensitiveData
-Data <|-- UnverifiedData
-Data <|-- VerifiedData
++ Data
+++ CollectedData
++++ ObservedData
++++ ProvidedData
+++ CommerciallyConfidentialData
+++ ConfidentialData
++++ IntellectualPropertyData
++++ StatisticallyConfidentialData
+++ DerivedData
++++ InferredData
+++ GeneratedData
++++ SyntheticData
+++ IncorrectData
+++ NonPersonalData
++++ AnonymisedData
+++ SensitiveData
++++ SensitiveNonPersonalData
+++ UnverifiedData
+++ VerifiedData
+-- PersonalData
+--- CollectedPersonalData
+--- DerivedPersonalData
+--- GeneratedPersonalData
+--- IdentifyingPersonalData
+--- PseudonymisedData
+--- SensitivePersonalData
 
-
-CollectedData <|-- CollectedPersonalData
-CollectedData <|-- ObservedData
-CollectedData <|-- ProvidedData
-
-ConfidentialData <|-- IntellectualPropertyData
-ConfidentialData <|-- StatisticallyConfidentialData
-
-DerivedData <|-- DerivedPersonalData
-DerivedData <|-- InferredData
-
-GeneratedData <|-- SyntheticData
-
-NonPersonalData <|-- AnonymisedData
-
-PersonalData <|-- CollectedPersonalData
-PersonalData <|-- DerivedPersonalData
-PersonalData <|-- GeneratedPersonalData
-PersonalData <|-- IdentifyingPersonalData
-PersonalData <|-- PseudonymisedData
-PersonalData <|-- SensitivePersonalData
-
-SensitiveData <|-- SensitiveNonPersonalData
-SensitiveData <|-- SensitivePersonalData
-
-@enduml
+@endmindmap

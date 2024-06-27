@@ -24,13 +24,26 @@ package dpv {
 	class ConsentWithdrawn #LightBlue
 	class ConsentGiven #LightBlue
 	class RenewedConsentGiven #LightBlue
+
+	class Duration
+	note right of Duration : e.g. 6 months,31-DEC-2024,\nuntil account closure
+
+	class ConsentControl
+	class ObtainConsent
+	class ProvideConsent
+	class ReaffirmConsent
 }
 
 Thing -- LegalBasis: hasLegalBasis >
 LegalBasis <|-l- Consent
 Consent -l- ConsentStatus: hasConsentStatus >
+Consent -r- ConsentControl: hasConsentControl >
 ConsentStatus <|-- ConsentStatusValidForProcessing
 ConsentStatus <|-- ConsentStatusInvalidForProcessing
+
+ConsentControl <|-- ObtainConsent
+ConsentControl <|-- ProvideConsent
+ConsentControl <|-- ReaffirmConsent
 
 Consent <|-- InformedConsent
 InformedConsent <|-- ExpressedConsent
@@ -47,5 +60,8 @@ ConsentStatusInvalidForProcessing <|-- ConsentUnknown
 ConsentStatusInvalidForProcessing <|-- ConsentWithdrawn
 ConsentStatusValidForProcessing <|-- ConsentGiven
 ConsentStatusValidForProcessing <|-- RenewedConsentGiven
+
+Consent -- Duration : hasDuration >
+
 
 @enduml

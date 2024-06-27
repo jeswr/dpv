@@ -1,31 +1,16 @@
-@startuml
+@startmindmap
 !include style.plantuml
-''left to right direction
 
-class Thing #silver
-package dpv {
-	class Copy
-	class Disclose
-	class Obtain
-	class Organise
-	class Processing
-	class Remove
-	class Store
-	class Transform
-	class Transfer
-	class Use
-}
 
-Thing -- Processing: hasProcessing >
++ Processing
+++ Copy
+++ Disclose
+++ Obtain
+++ Organise
+-- Remove
+-- Store
+-- Transform
+-- Transfer
+-- Use
 
-Processing <|-- Copy
-Processing <|-- Disclose
-Processing <|-- Obtain
-Processing <|-- Organise
-Processing <|-- Remove
-Processing <|-- Store
-Processing <|-- Transform
-Processing <|-- Transfer
-Processing <|-- Use
-
-@enduml
+@endmindmap

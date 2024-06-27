@@ -1,8 +1,12 @@
 @startuml
 !include style.plantuml
-left to right direction
+top to bottom direction
 
-class Thing #silver
+class "Thing" as Thing1 #silver
+class "Thing" as Thing2 #silver
+class "Thing" as Thing3 #silver
+class "Thing" as Thing4 #silver
+
 package dpv {
 	class Context
 	class Importance
@@ -21,25 +25,25 @@ package dpv {
 	class Lawfulness
 }
 
-Thing -- Context: hasContext >
-Thing -- Importance: hasImportance >
-Thing -- Necessity: hasNecessity >
-Thing -- Entity: hasEntity >
-Thing -- Technology: hasTechnology >
-Thing -- Justification: hasJustification >
-Thing -- Frequency: hasFrequency >
-Thing -- Duration: hasDuration >
-Thing -- Scope: hasScope >
-Thing -- Status: hasStatus >
-Thing -- ActivityStatus: hasActivityStatus >
-Thing -- AuditStatus: hasAuditStatus >
-Thing -- RequestStatus: hasRequestStatus >
-Thing -- ComplianceStatus: hasComplianceStatus >
-Thing -- Lawfulness: hasLawfulness >
+Thing1 -d- Context: hasContext >
+Thing1 -d- Importance: hasImportance >
+Thing1 -d- Necessity: hasNecessity >
+Thing1 -d- Entity: hasEntity >
+Thing2 -u- Technology: hasTechnology >
+Thing2 -u- Justification: hasJustification >
+Thing3 -u- Frequency: hasFrequency >
+Thing3 -u- Duration: hasDuration >
+Thing3 -u- Scope: hasScope >
+Thing3 -u- Status: hasStatus >
+Thing4 -d- ActivityStatus: hasActivityStatus >
+Thing4 -d- AuditStatus: hasAuditStatus >
+Thing4 -d- RequestStatus: hasRequestStatus >
+Thing4 -d- ComplianceStatus: hasComplianceStatus >
+Thing4 -d- Lawfulness: hasLawfulness >
 
-Thing --- Thing: hasIdentifier >
-Thing --- Thing: hasOutcome >
-Thing --- Thing: isAfter >
-Thing --- Thing: isBefore >
+Thing2 -r- Resource: hasIdentifier >
+Thing2 -r- Resource: hasOutcome >
+Thing2 -l- Resource: isAfter >
+Thing2 -l- Resource: isBefore >
 
 @enduml

@@ -1,31 +1,29 @@
 @startuml
+
 !include style.plantuml
-'left to right direction
+left to right direction
+'top to bottom direction
+'skinparam linetype ortho
 
 class Thing #silver
 package dpv {
 	class TechnicalOrganisationalMeasure
-	class RiskMitigationMeasure
 	class TechnicalMeasure
 	class OrganisationalMeasure
-	class Risk
-	class Notice
-	class Policy
+	class LegalMeasure
+	class PhysicalMeasure
 }
 
-TechnicalOrganisationalMeasure <|-- TechnicalMeasure
-TechnicalOrganisationalMeasure <|-- RiskMitigationMeasure
-TechnicalOrganisationalMeasure <|-- OrganisationalMeasure
-OrganisationalMeasure <|-- Notice
-OrganisationalMeasure <|-- Policy
+TechnicalOrganisationalMeasure <|-u- TechnicalMeasure
+TechnicalOrganisationalMeasure <|-u- OrganisationalMeasure
+TechnicalOrganisationalMeasure <|-u- LegalMeasure
+TechnicalOrganisationalMeasure <|-u- PhysicalMeasure
 
 Thing -- TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure >
+Thing -- OrganisationalMeasure : hasOrganisationalMeasure >
 Thing -- TechnicalMeasure : hasTechnicalMeasure >
-Thing -- Risk : hasRisk >
-Thing -- Notice : hasNotice >
-Thing -- Policy : hasPolicy >
-Risk -- RiskMitigationMeasure: isMitigatedByMeasure >
-RiskMitigationMeasure -- Risk: mitigatesRisk >
-Policy -- Thing: isPolicyFor >
+Thing -- LegalMeasure : hasLegalMeasure >
+Thing -- PhysicalMeasure : hasPhysicalMeasure >
+
 
 @enduml

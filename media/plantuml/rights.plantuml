@@ -30,6 +30,7 @@ Notice <|-d- RightNonFulfilmentNotice
 
 Record <|- RightExerciseRecord
 RightExerciseRecord -- RightExerciseActivity : dct:hasPart >
+RightExerciseRecord -- Right : hasRight >
 RightExerciseActivity -- RightExerciseActivity : isBefore/isAfter >
 RightExerciseActivity -- RequestStatus : hasStatus >
 
