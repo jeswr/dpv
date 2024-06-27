@@ -19,13 +19,13 @@ TechnicalOrganisationalMeasure <|-- OrganisationalMeasure
 OrganisationalMeasure <|-- Notice
 OrganisationalMeasure <|-- Policy
 
-Thing --> TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure
-Thing --> TechnicalMeasure : hasTechnicalMeasure
-Thing --> Risk : hasRisk
-Thing --> Notice : hasNotice
-Thing --> Policy : hasPolicy
-Risk --> RiskMitigationMeasure: isMitigatedByMeasure
-RiskMitigationMeasure --> Risk: mitigatesRisk
-Policy --> Thing: isPolicyFor
+Thing -- TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure >
+Thing -- TechnicalMeasure : hasTechnicalMeasure >
+Thing -- Risk : hasRisk >
+Thing -- Notice : hasNotice >
+Thing -- Policy : hasPolicy >
+Risk -- RiskMitigationMeasure: isMitigatedByMeasure >
+RiskMitigationMeasure -- Risk: mitigatesRisk >
+Policy -- Thing: isPolicyFor >
 
 @enduml

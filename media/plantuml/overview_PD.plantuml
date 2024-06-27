@@ -1,14 +1,17 @@
 @startuml
 !include style.plantuml
 left to right direction
+'top to bottom direction
 
 class Thing #silver
-class PersonalData
-class SensitivePersonalData
-class SpecialCategoryPersonalData
+package dpv {
+	class PersonalData
+	class SpecialCategoryPersonalData
+	class SensitivePersonalData
+}
 
-Thing --> PersonalData : hasPersonalData
-PersonalData <|- SensitivePersonalData
-SensitivePersonalData <|- SpecialCategoryPersonalData
+Thing -- PersonalData : hasPersonalData >
+PersonalData <|-- SensitivePersonalData
+SensitivePersonalData <|-- SpecialCategoryPersonalData
 
 @enduml

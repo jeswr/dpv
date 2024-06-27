@@ -26,9 +26,9 @@ package dpv {
 	class RenewedConsentGiven #LightBlue
 }
 
-Thing --> LegalBasis: hasLegalBasis
+Thing -- LegalBasis: hasLegalBasis >
 LegalBasis <|-l- Consent
-Consent -l-> ConsentStatus: hasConsentStatus
+Consent -l- ConsentStatus: hasConsentStatus >
 ConsentStatus <|-- ConsentStatusValidForProcessing
 ConsentStatus <|-- ConsentStatusInvalidForProcessing
 

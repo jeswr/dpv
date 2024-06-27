@@ -4,10 +4,11 @@ left to right direction
 'top to bottom direction
 
 class Thing #silver
-class Technology
-
-Thing --> Technology: isImplementedUsingTechnology
-Technology --> Thing: implements
+package dpv {
+	class Technology
+}
+Thing -- Technology: isImplementedUsingTechnology >
+Technology -- Thing: implements >
 
 
 @enduml

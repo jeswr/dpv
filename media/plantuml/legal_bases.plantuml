@@ -22,7 +22,7 @@ package dpv {
 	class UninformedConsent
 }
 
-Thing --> LegalBasis: hasLegalBasis
+Thing -- LegalBasis: hasLegalBasis >
 
 LegalBasis <|-- Consent
 LegalBasis <|-- DataTransferLegalBasis

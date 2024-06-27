@@ -17,11 +17,11 @@ TechnicalOrganisationalMeasure <|-- OrganisationalMeasure
 TechnicalOrganisationalMeasure <|-- LegalMeasure
 TechnicalOrganisationalMeasure <|-- PhysicalMeasure
 
-Thing --> TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure
-Thing --> OrganisationalMeasure : hasOrganisationalMeasure
-Thing --> TechnicalMeasure : hasTechnicalMeasure
-Thing --> LegalMeasure : hasLegalMeasure
-Thing --> PhysicalMeasure : hasPhysicalMeasure
+Thing -- TechnicalOrganisationalMeasure : hasTechnicalOrganisationalMeasure >
+Thing -- OrganisationalMeasure : hasOrganisationalMeasure >
+Thing -- TechnicalMeasure : hasTechnicalMeasure >
+Thing -- LegalMeasure : hasLegalMeasure >
+Thing -- PhysicalMeasure : hasPhysicalMeasure >
 
 
 @enduml

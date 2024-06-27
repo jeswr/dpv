@@ -3,21 +3,22 @@
 left to right direction
 
 class Thing #silver
-class Right
-class Notice
-class DataSubjectRight
-class PassiveRight
-class ActiveRight
-class Record
-class RightExerciseNotice
-class RightFulfilmentNotice
-class RightNonFulfilmentNotice
-class RightExerciseRecord
-class RightExerciseActivity
-class RequestStatus
-
-Thing --> Right : hasRight
-Thing --> Notice : hasNotice
+package dpv {
+	class Right
+	class Notice
+	class DataSubjectRight
+	class PassiveRight
+	class ActiveRight
+	class Record
+	class RightExerciseNotice
+	class RightFulfilmentNotice
+	class RightNonFulfilmentNotice
+	class RightExerciseRecord
+	class RightExerciseActivity
+	class RequestStatus
+}
+Thing -- Right : hasRight >
+Thing -- Notice : hasNotice >
 
 Right <|-d- DataSubjectRight
 Right <|-d- PassiveRight
@@ -28,8 +29,8 @@ Notice <|-d- RightFulfilmentNotice
 Notice <|-d- RightNonFulfilmentNotice
 
 Record <|- RightExerciseRecord
-RightExerciseRecord --> RightExerciseActivity : dct:hasPart
-RightExerciseActivity --> RightExerciseActivity : isBefore/isAfter
-RightExerciseActivity --> RequestStatus : hasStatus
+RightExerciseRecord -- RightExerciseActivity : dct:hasPart >
+RightExerciseActivity -- RightExerciseActivity : isBefore/isAfter >
+RightExerciseActivity -- RequestStatus : hasStatus >
 
 @enduml

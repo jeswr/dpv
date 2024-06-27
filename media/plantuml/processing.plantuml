@@ -16,7 +16,7 @@ package dpv {
 	class Use
 }
 
-Thing --> Processing: hasProcessing
+Thing -- Processing: hasProcessing >
 
 Processing <|-- Copy
 Processing <|-- Disclose

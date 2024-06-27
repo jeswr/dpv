@@ -4,17 +4,18 @@ left to right direction
 'top to bottom direction
 
 class Thing #silver
-class Location
-class Authority
-class Law
-class Country
-
-Country --|> Location
-Thing --> Authority: hasAuthority
-Authority --> Thing: isAuthorityFor
-Thing --> Location: hasLocation
-Thing --> Location: hasJurisdiction
-Thing --> Country: hasCountry
-Location --> Law: hasApplicableLaw
+package dpv {
+	class Location
+	class Authority
+	class Law
+	class Country
+}
+Location <|-- Country
+Thing -- Authority: hasAuthority >
+Authority -- Thing: isAuthorityFor >
+Thing -- Location: hasLocation >
+Thing -- Location: hasJurisdiction >
+Thing -- Country: hasCountry >
+Location -- Law: hasApplicableLaw >
 
 @enduml

@@ -8,12 +8,12 @@ package dpv {
 	class Entity
 }
 
-Thing --> Entity: hasEntity
-Entity --> Resource : hasName
-Entity --> Resource : hasAddress
-Entity --> Resource : hasContact
-Entity --> Resource : hasRepresentative
-Entity --> Resource : hasJurisdiction
-Entity --> Resource : hasLocation
+Thing -- Entity: hasEntity >
+Entity -- Resource : hasName >
+Entity -- Resource : hasAddress >
+Entity -- Resource : hasContact >
+Entity -- Resource : hasRepresentative >
+Entity -- Resource : hasJurisdiction >
+Entity -- Resource : hasLocation >
 
 @enduml

@@ -4,11 +4,12 @@ left to right direction
 'top to bottom direction
 
 class Thing #silver
-class VulnerableDataSubject
-class DataSubject
-class Child
-
-Thing --> DataSubject: hasDataSubject
+package dpv {
+	class VulnerableDataSubject
+	class DataSubject
+	class Child
+}
+Thing -- DataSubject: hasDataSubject >
 DataSubject <|-- Child
 DataSubject <|-- VulnerableDataSubject
 

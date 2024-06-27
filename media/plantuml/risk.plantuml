@@ -4,13 +4,15 @@
 'top to bottom direction
 
 class Thing #silver
-class Risk
-class RiskMitigationMeasure
-class RiskLevel
-class Consequence
-class Impact
-class Severity
-class Likelihood
+package dpv {
+	class Risk
+	class RiskMitigationMeasure
+	class RiskLevel
+	class Consequence
+	class Impact
+	class Severity
+	class Likelihood
+}
 
 Thing -- Risk : hasRisk >
 Thing -- Consequence: hasConsequence >

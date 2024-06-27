@@ -8,7 +8,7 @@ class c2 as "Concept"
 class c3 as "Concept"
 class c4 as "Concept"
 c1 <|- c3
-c2 --> c3 : "isInstanceOf"
-c3 --> c4 : relation
+c2 -- c3 : isInstanceOf >
+c3 -- c4 : relation >
 
 @enduml

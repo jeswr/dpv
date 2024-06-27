@@ -3,17 +3,20 @@
 'left to right direction
 'top to bottom direction
 
-class Assessment
-class RiskAssessment
-class ImpactAssessment
-class RightsImpactAssessment
-class DPIA
-class DataBreachImpactAssessment
-class FRIA
-class PIA
-class DataTransferImpactAssessment
-class ReviewImpactAssessment
-
+class Thing #silver
+package dpv {
+	class Assessment
+	class RiskAssessment
+	class ImpactAssessment
+	class RightsImpactAssessment
+	class DPIA
+	class DataBreachImpactAssessment
+	class FRIA
+	class PIA
+	class DataTransferImpactAssessment
+	class ReviewImpactAssessment
+}
+Thing -- Assessment : hasAssessment >
 Assessment <|-- RiskAssessment
 Assessment <|-- ImpactAssessment
 ImpactAssessment <|-- RightsImpactAssessment

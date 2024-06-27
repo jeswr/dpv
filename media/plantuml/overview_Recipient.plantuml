@@ -4,19 +4,20 @@ left to right direction
 'top to bottom direction
 
 class Thing #silver
-class DataProcessor
-class DataController
-class ThirdParty
-class Recipient
-
+package dpv {
+	class DataProcessor
+	class DataController
+	class ThirdParty
+	class Recipient
+}
 Recipient <|-- ThirdParty
 Recipient <|-- DataController
 Recipient <|-- DataProcessor
 
-Thing --> Recipient : hasRecipient
-Thing --> DataController: hasRecipientDataController
-Thing --> DataProcessor: hasRecipientDataProcessor
-Thing --> ThirdParty : hasRecipientThirdParty
+Thing -- Recipient : hasRecipient >
+Thing -- DataController: hasRecipientDataController >
+Thing -- DataProcessor: hasRecipientDataProcessor >
+Thing -- ThirdParty : hasRecipientThirdParty >
 
 
 @enduml

@@ -1,6 +1,6 @@
 @startuml
 !include style.plantuml
-'left to right direction
+left to right direction
 
 class Thing #silver
 package dpv {
@@ -21,25 +21,25 @@ package dpv {
 	class Lawfulness
 }
 
-Thing --> Context: hasContext
-Thing --> Importance: hasImportance
-Thing --> Necessity: hasNecessity
-Thing --> Entity: hasEntity
-Thing --> Technology: hasTechnology
-Thing --> Justification: hasJustification
-Thing --> Frequency: hasFrequency
-Thing --> Duration: hasDuration
-Thing --> Scope: hasScope
-Thing --> Status: hasStatus
-Thing --> ActivityStatus: hasActivityStatus
-Thing --> AuditStatus: hasAuditStatus
-Thing --> RequestStatus: hasRequestStatus
-Thing --> ComplianceStatus: hasComplianceStatus
-Thing --> Lawfulness: hasLawfulness
+Thing -- Context: hasContext >
+Thing -- Importance: hasImportance >
+Thing -- Necessity: hasNecessity >
+Thing -- Entity: hasEntity >
+Thing -- Technology: hasTechnology >
+Thing -- Justification: hasJustification >
+Thing -- Frequency: hasFrequency >
+Thing -- Duration: hasDuration >
+Thing -- Scope: hasScope >
+Thing -- Status: hasStatus >
+Thing -- ActivityStatus: hasActivityStatus >
+Thing -- AuditStatus: hasAuditStatus >
+Thing -- RequestStatus: hasRequestStatus >
+Thing -- ComplianceStatus: hasComplianceStatus >
+Thing -- Lawfulness: hasLawfulness >
 
-Thing ---> Thing: hasIdentifier
-Thing ---> Thing: hasOutcome
-Thing ---> Thing: isAfter
-Thing ---> Thing: isBefore
+Thing --- Thing: hasIdentifier >
+Thing --- Thing: hasOutcome >
+Thing --- Thing: isAfter >
+Thing --- Thing: isBefore >
 
 @enduml

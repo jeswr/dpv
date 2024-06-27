@@ -64,7 +64,7 @@ package dpv {
 	
 }
 
-Thing --> Entity: hasEntity
+Thing -- Entity: hasEntity >
 Entity <|-- LegalEntity
 Entity <|-- NaturalPerson
 LegalEntity <|-- Representative

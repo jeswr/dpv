@@ -3,26 +3,27 @@
 left to right direction
 
 class Thing #silver
-class Data
-class PersonalData
-class CollectedData
-class CollectedPersonalData
-class ProvidedData
-class CommerciallyConfidentialData
-class ConfidentialData
-class DerivedData
-class DerivedPersonalData
-class GeneratedData
-class IncorrectData
-class InferredData
-class IntellectualPropertyData
-class NonPersonalData
-class ObservedData
-class SensitiveData
-class StatisticallyConfidentialData
-class UnverifiedData
-class VerifiedData
-
+package dpv {
+	class Data
+	class PersonalData
+	class CollectedData
+	class CollectedPersonalData
+	class ProvidedData
+	class CommerciallyConfidentialData
+	class ConfidentialData
+	class DerivedData
+	class DerivedPersonalData
+	class GeneratedData
+	class IncorrectData
+	class InferredData
+	class IntellectualPropertyData
+	class NonPersonalData
+	class ObservedData
+	class SensitiveData
+	class StatisticallyConfidentialData
+	class UnverifiedData
+	class VerifiedData
+}
 Thing -- PersonalData : hasPersonalData >
 Thing -- Data : hasData >
 Data <|-- CollectedData

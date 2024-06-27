@@ -3,16 +3,17 @@
 left to right direction
 
 class Thing #silver
-class Representative
-class DataController
-class DataProcessor
-class ThirdParty
-class Authority
-class DataSubject
-class LegalEntity
-class NaturalPerson
-class Entity
-
+package dpv {
+	class Representative
+	class DataController
+	class DataProcessor
+	class ThirdParty
+	class Authority
+	class DataSubject
+	class LegalEntity
+	class NaturalPerson
+	class Entity
+}
 Representative --|> LegalEntity 
 DataController --|> LegalEntity
 DataProcessor --|> LegalEntity
@@ -23,11 +24,11 @@ DataSubject --|> NaturalPerson
 LegalEntity --|> Entity
 NaturalPerson --|> Entity
 
-Thing --> Representative: hasRepresentative
-Thing --> DataController: hasDataController
-Thing --> DataProcessor: hasDataProcessor
-Thing --> ThirdParty: hasThirdParty
-Thing --> Authority: hasAuthority
-Thing --> DataSubject: hasDataSubject
+Thing -- Representative: hasRepresentative >
+Thing -- DataController: hasDataController >
+Thing -- DataProcessor: hasDataProcessor >
+Thing -- ThirdParty: hasThirdParty >
+Thing -- Authority: hasAuthority >
+Thing -- DataSubject: hasDataSubject >
 
 @enduml

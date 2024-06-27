@@ -12,14 +12,14 @@ package dpv {
 	class Representative
 }
 
-Thing --> Entity: hasEntity
+Thing -- Entity: hasEntity >
 Entity <|-- LegalEntity
 
-LegalEntity --> Resource: hasName
-LegalEntity --> Resource: hasContact
-LegalEntity --> Resource: hasIdentifier
-LegalEntity --> Resource: hasAddress
-LegalEntity --> Representative: hasRepresentataive
+LegalEntity -- Resource: hasName >
+LegalEntity -- Resource: hasContact >
+LegalEntity -- Resource: hasIdentifier >
+LegalEntity -- Resource: hasAddress >
+LegalEntity -- Representative: hasRepresentataive >
 
 Entity <|-- NaturalPerson
 NaturalPerson <|-- DataSubject

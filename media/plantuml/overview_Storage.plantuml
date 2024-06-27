@@ -3,19 +3,20 @@
 left to right direction
 
 class Thing #silver
-class StorageDuration
-class StorageLocation
-class StorageDeletion
-class StorageRestoration
-class StorageCondition
+package dpv {
+	class StorageDuration
+	class StorageLocation
+	class StorageDeletion
+	class StorageRestoration
+	class StorageCondition
+}
+Thing -- StorageCondition: hasStorage >
+Thing -- StorageDuration : hasDuration >
+Thing -- StorageLocation: hasLocation >
 
-Thing --> StorageCondition: hasStorage
-Thing --> StorageDuration : hasDuration
-Thing --> StorageLocation: hasLocation
-
-StorageDuration --|> StorageCondition
-StorageLocation --|> StorageCondition
-StorageDeletion --|> StorageCondition
-StorageRestoration --|> StorageCondition
+StorageCondition <|-- StorageDuration
+StorageCondition <|-- StorageLocation
+StorageCondition <|-- StorageDeletion
+StorageCondition <|-- StorageRestoration
 
 @enduml

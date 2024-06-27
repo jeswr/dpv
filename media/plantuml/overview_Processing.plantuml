@@ -3,14 +3,15 @@
 left to right direction
 
 class Thing #silver
-class Processing
-class DataSource
-class ProcessingContext
-class Context
-
-Thing --> Processing : hasProcessing
-Processing --> DataSource: hasDataSource
-Processing --> ProcessingContext : hasContext
+package dpv {
+	class Processing
+	class DataSource
+	class ProcessingContext
+	class Context
+}
+Thing -- Processing : hasProcessing >
+Processing -- DataSource: hasDataSource >
+Processing -- ProcessingContext : hasContext >
 Context <|- ProcessingContext
 
 @enduml

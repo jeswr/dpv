@@ -25,8 +25,8 @@ package dpv {
 	class ServiceProvision
 	class VendorManagement
 }
-Thing --> Purpose : hasPurpose >
-Purpose ---> Sector : hasSector >
+Thing -- Purpose : hasPurpose >
+Purpose --- Sector : hasSector >
 Purpose <|--- AccountManagement
 Purpose <|--- CommercialPurpose
 Purpose <|--- CommunicationManagement

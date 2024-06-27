@@ -3,8 +3,9 @@
 left to right direction
 
 class Thing #silver
-class LegalBasis
-
-Thing --> LegalBasis: hasLegalBasis
+package dpv {
+	class LegalBasis
+}
+Thing -- LegalBasis: hasLegalBasis >
 
 @enduml
