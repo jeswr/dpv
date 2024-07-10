@@ -1,0 +1,101 @@
+@startuml
+!include style.plantuml
+skinParam groupInheritance 2
+'left to right direction
+package dpv {
+	class Process
+	class LegalBasis
+	class Principle
+	class GuidelinesPrinciple
+	class OrganisationalMeasure
+	class Right
+	class DataSubjectRight
+	class Organisation
+	class LegalEntity
+	class Entity
+	class DataProtectionAuthority
+	class Lawfulness
+	/'
+	class TechnicalOrganisationalMeasure
+	class LegalBasis
+	' class DataTransferLegalBasis 
+	' class ExplicitlyExpressedConsent
+	' class ExpressedConsent
+	' class InformedConsent
+	' class Consent
+	'/
+}
+
+Process -d- LegalBasis: hasLegalBasis >
+Process -d- OrganisationalMeasure: hasOrganisationalMeasure >
+Process -d- Right: hasRight >
+Process -d- Entity: hasEntity >
+Process -d- Lawfulness: hasLawfulness >
+Process -d- dpv.DataProtectionAuthority: hasAuthority >
+
+Right <|-d- DataSubjectRight
+OrganisationalMeasure <|-d- GuidelinesPrinciple
+GuidelinesPrinciple <|-d- Principle
+Entity <|–d- LegalEntity
+LegalEntity <|-d- Organisation
+
+/'
+' LegalBasis <|-- Consent
+' Consent <|-- InformedConsent
+' InformedConsent <|-- ExpressedConsent
+' ExpressedConsent <|-- ExplicitlyExpressedConsent
+'/
+
+package dpv.risk {
+	class Incident
+}
+
+Process -- Incident: hasIncident >
+
+package dpv.legal.eu.eu-gdpr {
+	abstract class LegalBasesA6 as "Core legal bases (Art. 6)" #LightBlue
+	abstract class LegalBasesSpecialA9 as "Legal bases for special\ncategory personal data (Art. 9)" #LightBlue
+	abstract class LegalBasesDataTransfersA45_49 as "Legal bases for\ndata transfer (Art. 45-49)" #LightBlue
+	abstract class PrinciplesA5 as "Principles for personal\ndata processing (Art. 5)" #LightBlue
+	abstract class DataSubjectRightsGDPR as "Data subject rights" #LightBlue
+	abstract class DataTransferToolsGDPR as "Data transfer tools" #LightBlue
+	abstract class DataBreachObligations as "Data breach obligations" #LightBlue
+	abstract class DataProtectionImpactAssessment as "DPIA concepts" #LightBlue
+	class DataBreach
+	class Establishment
+	class MainEstablishment
+	class SingleEstablishment
+	class GdprDataProtectionAuthority as "DataProtectionAuthority"
+	class ConcernedSupervisoryAuthority
+	class LeadSupervisoryAuthority
+	class LocalSupervisoryAuthority
+	class GDPRLawfulness
+	class GDPRComplianceUnknown
+	class GDPRCompliant
+	class GDPRNonCompliant
+}
+LegalBasis <|-d- LegalBasesA6
+LegalBasis <|-d- LegalBasesSpecialA9
+LegalBasis <|-d- LegalBasesDataTransfersA45_49
+
+Principle <|-d- PrinciplesA5
+
+DataSubjectRight <|--- DataSubjectRightsGDPR
+OrganisationalMeasure <|--- DataTransferToolsGDPR
+Incident <|-- DataBreach
+DataBreach <|-- DataBreachObligations
+
+Organisation <|-d- Establishment
+Establishment <|-- MainEstablishment
+Establishment <|-- SingleEstablishment
+
+DataProtectionAuthority <|-- GdprDataProtectionAuthority
+GdprDataProtectionAuthority <|-- ConcernedSupervisoryAuthority
+GdprDataProtectionAuthority <|-- LeadSupervisoryAuthority
+GdprDataProtectionAuthority <|-- LocalSupervisoryAuthority
+
+Lawfulness <|-- GDPRLawfulness
+GDPRLawfulness <|-- GDPRComplianceUnknown
+GDPRLawfulness <|-- GDPRCompliant
+GDPRLawfulness <|-- GDPRNonCompliant
+@enduml
