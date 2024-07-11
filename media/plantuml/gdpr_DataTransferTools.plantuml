@@ -8,7 +8,7 @@ package dpv {
 	class TechnicalOrganisationalMeasure
 	class OrganisationalMeasure
 }
-package dpv.legal.eu.eu-gdpr {
+package dpv.legal.eu.gdpr {
 	class DataTransferTool
 	class AdHocContractualClauses
 	class BindingCorporateRules

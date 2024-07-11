@@ -7,7 +7,7 @@ package dpv {
 	class Process
 	class LegalBasis
 }
-package dpv.eu-gdpr {
+package dpv.legal.eu.gdpr {
 	class A45_3 as "A45-3"
 	class A46_2_a as "A46-2-a"
 	class A46_2_b as "A46-2-b"

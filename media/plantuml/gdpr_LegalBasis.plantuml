@@ -8,7 +8,7 @@ package dpv {
 	class Process
 	class LegalBasis
 }
-package eu-gdpr {
+package dpv.legal.eu.gdpr {
 	class A6_1_a as "A6-1-a"
 	class A6_1_a_explicit_consent as "A6-1-a-explicit-consent"
 	class A6_1_a_non_explicit_consent as "A6-1-a-non-explicit-consent"
