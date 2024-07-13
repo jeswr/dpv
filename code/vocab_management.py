@@ -101,8 +101,8 @@ NS.ns = { k:v for k,v in NAMESPACES.items() }
 # === Import/Export for RDF and HTML ===
 
 # DPV Version
-DPV_VERSION = "2.0"
-DPV_PUBLISH_DATE = "2024-07-01"
+DPV_VERSION = "2.1-dev"
+DPV_PUBLISH_DATE = "2024-07-13"
 # Document status: should be one of CG-DRAFT or CG-FINAL
 DOCUMENT_STATUS = "CG-DRAFT"
 
