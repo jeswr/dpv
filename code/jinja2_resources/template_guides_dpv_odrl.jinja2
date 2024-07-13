@@ -12,7 +12,7 @@
     title: "Guide for using DPV with ODRL",
     subtitle: "Work in Progress",
     publishDate: "2024-07-01",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/guides/dpv-odrl",
     canonicalUri: "https://w3id.org/dpv/guides/dpv-odrl",
@@ -40,13 +40,15 @@
     localBiblio: {%  include 'references.json' %}
   };
 </script>
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../diagrams/common.css">
+<link rel="shortcut icon" href="../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
 <section id="abstract">
     <p>This document will provide a guide for using DPV with ODRL. Currently, it is a work in progress.</p>
     {{ dpv_document_family() }}
-      {{ sotd() }}
+      {{ sotd(data[vocab_name+'-metadata']) }}
 </section>
 
 {% block ACKNOWLEDGEMENTS %}
@@ -62,6 +64,6 @@
 
 </section>
 {% endblock ACKNOWLEDGEMENTS %}
-<script type="text/javascript" src="../media/common.js" defer></script>
+<script type="text/javascript" src="../diagrams/common.js" defer></script>
 </body>
 </html>

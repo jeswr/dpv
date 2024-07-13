@@ -69,17 +69,13 @@ IANA_TYPES = {
 VOCAB_TERM_ACCEPT = ('accepted', 'changed', 'modified', 'sunset')
 VOCAB_TERM_REJECT = ('deprecated', 'removed')
 
-# DPV Version
-DPV_VERSION = "2.0"
-DPV_PUBLISH_DATE = "2024-07-01"
-
 ## === term-ignored
 
 IGNORED_TERMS = ('rdf:type', 'rdfs:Class', 'rdf:Property', 'skos:Concept')
 
 # === namespaces ===
 NAMESPACE_CSV = (
-    'vocab_csv/Namespaces-v2.csv',
+    'vocab_csv/Namespaces.csv',
     'vocab_csv/Namespaces_Other.csv',
     )
 NAMESPACES = {}
@@ -104,12 +100,20 @@ NS.ns = { k:v for k,v in NAMESPACES.items() }
 
 # === Import/Export for RDF and HTML ===
 
+# DPV Version
+DPV_VERSION = "2.0"
+DPV_PUBLISH_DATE = "2024-07-01"
+# Document status: should be one of CG-DRAFT or CG-FINAL
+DOCUMENT_STATUS = "CG-DRAFT"
+
 # Root folder to import RDF files from
-IMPORT_PATH = '../v2.0'
+IMPORT_PATH = f'../{DPV_VERSION}'
 # Root folder to export HTML filese to
-EXPORT_PATH = '../v2.0'
+EXPORT_PATH = f'../{DPV_VERSION}'
 # Root folder where Jinja2 templates are stored
 TEMPLATE_PATH = './jinja2_resources'
+# RDF to be stored in folder
+EXPORT_RDF_PATH = f'../{DPV_VERSION}'
 
 # === csv-files ===
 IMPORT_CSV_PATH = './vocab_csv'
@@ -501,6 +505,7 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "",
+            "bibo:status": "published",
         # Automatically added when serialising:
             # dct:identifier - the IRI
             # dct:conformsTo - for default serialisation: RDFS, SKOS; for OWL: OWL2
@@ -568,6 +573,7 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit, Beatriz Esteves, Georg P. Krog, Paul Ryan, Delaram Golpayegani, Julian Flake",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "",
+            "bibo:status": "published",
         },
     },
     # EXTENSIONS
@@ -587,6 +593,7 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit, Axel Polleres, Beatriz Esteves, Georg P. Krog",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "published",
         },
     },
     'tech': {
@@ -610,6 +617,7 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake, Delaram Golpayegani",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "published",
         },
     },
     'ai': {
@@ -630,6 +638,7 @@ RDF_VOCABS = {
             "dct:creator": "Delaram Golpayegani, Harshvardhan J. Pandit",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "tech",
+            "bibo:status": "draft",
         },
     },
     'risk': {
@@ -653,6 +662,7 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit, Georg P. Krog, Paul Ryan, Rob Brennan, Delaram Golpayegani, Beatriz Esteves, Julian Flake",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "published",
         },
     },
     'justifications': {
@@ -673,6 +683,7 @@ RDF_VOCABS = {
             "dct:creator": "Beatriz Esteves, Harshvardhan J. Pandit, Georg P. Krog, Paul Ryan",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "published",
         },
     },
     'loc': {
@@ -691,6 +702,7 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "published",
         },
     },
     # LEGAL VOCABS
@@ -710,6 +722,7 @@ RDF_VOCABS = {
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
             'iri': 'https://w3id.org/dpv/legal/eu',
+            "bibo:status": "published",
         },
     },
     'legal-de': {
@@ -728,6 +741,7 @@ RDF_VOCABS = {
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
             'iri': 'https://w3id.org/dpv/legal/de',
+            "bibo:status": "published",
         },
     },
     'legal-gb': {
@@ -746,6 +760,7 @@ RDF_VOCABS = {
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
             'iri': 'https://w3id.org/dpv/legal/gb',
+            "bibo:status": "published",
         },
     },
     'legal-ie': {
@@ -764,6 +779,7 @@ RDF_VOCABS = {
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
             'iri': 'https://w3id.org/dpv/legal/ie',
+            "bibo:status": "published",
         },
     },
     'legal-in': {
@@ -782,6 +798,7 @@ RDF_VOCABS = {
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
             'iri': 'https://w3id.org/dpv/legal/in',
+            "bibo:status": "published",
         },
     },
     'legal-us': {
@@ -800,6 +817,7 @@ RDF_VOCABS = {
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
             'iri': 'https://w3id.org/dpv/legal/us',
+            "bibo:status": "published",
         },
     },
     'legal': {
@@ -818,6 +836,7 @@ RDF_VOCABS = {
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
             'iri': 'https://w3id.org/dpv/legal',
+            "bibo:status": "published",
         },
     },
     # EU Laws
@@ -846,6 +865,7 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit, Georg P. Krog, Paul Ryan, Beatriz Esteves",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "published",
         },
     },
     'eu-dga': {
@@ -868,6 +888,7 @@ RDF_VOCABS = {
             "dct:creator": "Beatriz Esteves, Harshvardhan J. Pandit, Georg P. Krog",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "published",
         },
     },
     'eu-aiact': {
@@ -893,6 +914,7 @@ RDF_VOCABS = {
             "dct:creator": "Delaram Golpayegani",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "draft",
         },
     },
     'eu-nis2': {
@@ -910,6 +932,7 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit, Georg P. Krog",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "published",
         },
     },
     'eu-rights': {
@@ -925,12 +948,12 @@ RDF_VOCABS = {
             "dct:creator": "Harshvardhan J. Pandit",
             "schema:version": DPV_VERSION,
             "profile:isProfileOf": "dpv",
+            "bibo:status": "draft",
         },
     },
 }
 
 # === exports ===
-EXPORT_RDF_PATH = '../v2.0'
 RDF_STRUCTURE = {
     'dpv': {
         'main': f'{EXPORT_RDF_PATH}/dpv',

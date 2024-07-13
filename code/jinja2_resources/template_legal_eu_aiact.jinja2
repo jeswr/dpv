@@ -16,7 +16,7 @@
     title: "{{data[vocab_name+'-metadata']['dct:title']}} ({{vocab_name|upper}})",
     subtitle: "version {{data[vocab_name+'-metadata']['schema:version']}}",
     publishDate: "{{data[vocab_name+'-metadata']['dct:modified']}}",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/legal/eu/aiact",
     canonicalUri: "https://w3id.org/dpv/legal/eu/aiact",
@@ -47,8 +47,8 @@
         "key": "This Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v2.0/legal/eu/aiact",
-              "href": "https://w3id.org/dpv/v2.0/legal/eu/aiact"
+              "value": "https://w3id.org/dpv/2.0/legal/eu/aiact",
+              "href": "https://w3id.org/dpv/2.0/legal/eu/aiact"
             }
         ]
       },
@@ -74,14 +74,15 @@
   };
 </script>
 {% endblock RESPEC %}
-<link rel="stylesheet" type="text/css" href="../../../media/common.css">
+<link rel="stylesheet" type="text/css" href="../../../diagrams/common.css">
+<link rel="shortcut icon" href="../../../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../../../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
 {% block ABSTRACT %}
   <section id="abstract">
     <p>The EU-AIAct extension extends the [[[DPV]]] to provide concepts such as systems, purposes, risks, roles, documentations, and assessments based on the [[[AIAct]]]. The canonical URL for EU-AIAct extension is <a href="https://w3id.org/dpv/legal/eu/aiact">https://w3id.org/dpv/legal/eu/aiact</a>, the namespace for terms is <a href="https://w3id.org/dpv/legal/eu/aiact#"><code>https://w3id.org/dpv/legal/eu/aiact#</code></a>, the suggested prefix is <code>eu-aiact</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
-    <p style="color: red">NOTE: This is a draft vocabulary, which will be updated as the AI Act is formally published and authoritative guidance is established on its interpretation. The DPVCG welcomes participation and contributions for this work.</p>
-    {{ sotd() }}
+    {{ sotd(data[vocab_name+'-metadata']) }}
     {{ dpv_document_family(document='eu-aiact-spec') }}
   </section>
 {% endblock ABSTRACT %}
@@ -228,6 +229,6 @@
 {% endif %}
 {% endblock PROPOSED %}
 
-<script type="text/javascript" src="../../../media/common.js" defer></script>
+<script type="text/javascript" src="../../../diagrams/common.js" defer></script>
 </body>
 </html>

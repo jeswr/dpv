@@ -12,7 +12,7 @@
     title: "Guide for using DPV with Misc. formats like CSV, JSON",
     subtitle: "Work in Progress",
     publishDate: "2024-07-01",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/guides/dpv-misc",
     canonicalUri: "https://w3id.org/dpv/guides/dpv-misc",
@@ -40,12 +40,14 @@
     localBiblio: {%  include 'references.json' %}
   };
 </script>
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../diagrams/common.css">
+<link rel="shortcut icon" href="../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
 <section id="abstract">
     <p>This document will provide a guide for using DPV with miscellaneous formats such as CSV and JSON. Currently, it is a work in progress.</p>
-    {{ sotd() }}
+    {{ sotd(data[vocab_name+'-metadata']) }}
     {{ dpv_document_family() }}
 </section>
 
@@ -61,6 +63,6 @@
 
 </section>
 {% endblock ACKNOWLEDGEMENTS %}
-<script type="text/javascript" src="../media/common.js" defer></script>
+<script type="text/javascript" src="../diagrams/common.js" defer></script>
 </body>
 </html>

@@ -15,7 +15,7 @@
     title: "{{data[vocab_name+'-metadata']['dct:title']}} ({{vocab_name|upper}})",
     subtitle: "version {{data[vocab_name+'-metadata']['schema:version']}}",
     publishDate: "{{data[vocab_name+'-metadata']['dct:modified']}}",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/tech",
     canonicalUri: "https://w3id.org/dpv/tech",
@@ -42,8 +42,8 @@
         "key": "This Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v2.0/tech",
-              "href": "https://w3id.org/dpv/v2.0/tech"
+              "value": "https://w3id.org/dpv/2.0/tech",
+              "href": "https://w3id.org/dpv/2.0/tech"
             }
         ]
       },
@@ -51,8 +51,8 @@
         "key": "Previous Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v1.0/dpv-tech",
-              "href": "https://w3id.org/dpv/v1.0/dpv-tech"
+              "value": "https://w3id.org/dpv/1.0/dpv-tech",
+              "href": "https://w3id.org/dpv/1.0/dpv-tech"
             }
         ]
       },
@@ -69,19 +69,25 @@
     localBiblio: {%  include 'references.json' %}
   };
 </script>
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../diagrams/common.css">
+<link rel="shortcut icon" href="../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
   {% block ABSTRACT %}
   <section id="abstract">
     <p>The [[[DPV]]] provides the concept <i>Technology</i> to represent how technologies are applied within the context of personal data and its processing. The TECH extension provides further specific details regarding technologies, their management, and relevance to actual real-world tools and systems. The namespace for terms in tech is <a href="http://w3id.org/dpv/tech#"><code>https://w3id.org/dpv/tech#</code></a>. The suggested prefix for the namespace is <code>tech</code>. The TECH vocabulary and its documentation is available on <a href="https://github.com/w3c/dpv">GitHub</a>.</p>
 
-    {{ sotd() }}
+    {{ sotd(data[vocab_name+'-metadata']) }}
     {{ dpv_document_family(document='tech-spec') }}
   </section>
   {% endblock ABSTRACT %}
   <section id="vocab-core">
     <h2>Core Concepts</h2>
+    <figure>
+      <img src="../diagrams/overview_Technology.png">
+      <figcaption></figcaption>
+    </figure>
     <p>The 'core' concepts in the TECH extension consist of:</p>
     <ul>
       <li>[=Actor=] to represent the 'actors' or entities in specific roles such as developing, providing, or using technologies</li>
@@ -306,6 +312,6 @@ ex:DatabaseDocs a tech:Instructions ;
 </section>
 {% endblock ACKNOWLEDGEMENTS %}
 
-<script type="text/javascript" src="../media/common.js" defer></script>
+<script type="text/javascript" src="../diagrams/common.js" defer></script>
 </body>
 </html>

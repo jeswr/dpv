@@ -16,7 +16,7 @@
     title: "{{data[vocab_name+'-metadata']['dct:title']}} ({{vocab_name|upper}})",
     subtitle: "version {{data[vocab_name+'-metadata']['schema:version']}}",
     publishDate: "{{data[vocab_name+'-metadata']['dct:modified']}}",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "{{RDF_VOCABS[vocab_name]['metadata']['iri']}}",
     canonicalUri: "{{RDF_VOCABS[vocab_name]['metadata']['iri']}}",
@@ -52,8 +52,8 @@
         "key": "Previous Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v1.0/dpv-legal",
-              "href": "https://w3id.org/dpv/v1.0/dpv-legal"
+              "value": "https://w3id.org/dpv/1.0/dpv-legal",
+              "href": "https://w3id.org/dpv/1.0/dpv-legal"
             }
         ]
       },
@@ -71,14 +71,16 @@
   };
 </script>
 {% endblock RESPEC %}
-<link rel="stylesheet" type="text/css" href="../../media/common.css">
+<link rel="stylesheet" type="text/css" href="../../diagrams/common.css">
+<link rel="shortcut icon" href="../../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
 {% block ABSTRACT %}
   <section id="abstract">
     <p>The {{vocab_name|upper}} extension extends the [[[DPV]]] to represent laws, authorities, and other legal concepts in {% if '-' in vocab_name %} {{vocab_name.split('-')[1]|upper}} jurisdiction{% else %}various jurisdictions{% endif %}.</p>
     <p>The canonical URL for {{vocab_name|upper}} extension is <a href="{{RDF_VOCABS[vocab_name]['metadata']['iri']}}">{{RDF_VOCABS[vocab_name]['metadata']['iri']}}</a>, the namespace is <a href="{{RDF_VOCABS[vocab_name]['metadata']['iri']}}#"><code>{{RDF_VOCABS[vocab_name]['metadata']['iri']}}#</code></a>, the suggested prefix is <code>{{vocab_name}}</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
-    {{ sotd() }}
+    {{ sotd(data[vocab_name+'-metadata']) }}
     {{ dpv_document_family(document='dpv-pd-spec') }}
   </section>
 {% endblock ABSTRACT %}
@@ -88,6 +90,11 @@
 {% block VOCAB %}
 <section id="vocab-legal">
     <h2>Overview</h2>
+    <p>The Legal extension uses the following concepts and properties to define laws, authorities, and jurisdictions.</p>
+    <figure>
+        {% if vocab_name == 'legal' %}<img src="../diagrams/legal_Law.png">{% else %}<img src="../../diagrams/legal_Law.png">{% endif %}
+        <figcaption></figcaption>
+      </figure>
     <p>This page provides the following legal concepts:</p>
     <ol>
         {% if modules['legal']['classes']|filter_type('dpv:Law')|length > 0 %}

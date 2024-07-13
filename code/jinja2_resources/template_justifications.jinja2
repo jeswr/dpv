@@ -16,7 +16,7 @@
     title: "{{data[vocab_name+'-metadata']['dct:title']}} ({{vocab_name|upper}})",
     subtitle: "version {{data[vocab_name+'-metadata']['schema:version']}}",
     publishDate: "{{data[vocab_name+'-metadata']['dct:modified']}}",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/justifications",
     canonicalUri: "https://w3id.org/dpv/justifications",
@@ -47,8 +47,8 @@
         "key": "This Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v2.0/justifications",
-              "href": "https://w3id.org/dpv/v2.0/justifications"
+              "value": "https://w3id.org/dpv/2.0/justifications",
+              "href": "https://w3id.org/dpv/2.0/justifications"
             }
         ]
       },
@@ -65,12 +65,14 @@
     localBiblio: {%  include 'references.json' %}
   };
 </script>
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../diagrams/common.css">
+<link rel="shortcut icon" href="../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
   <section id="abstract">
     <p>The Justification extension provides a taxonomy extending the [[[DPV]]] concept <code>Justification</code> to enable representing specific justifications associated with non-fulfilment, non-requirement, delays, and exercising reasons involved in processes. The namespace for terms in justifications is <a href="http://www.w3id.org/dpv/justifications#"><code>https://www.w3id.org/dpv/justifications#</code></a>, the suggested prefix  is <code>justifications</code>, and the justifications vocabulary and its documentation is available on <a href="https://github.com/w3c/dpv">GitHub</a>.</p>
-    {{ sotd() }}
+    {{ sotd(data[vocab_name+'-metadata']) }}
     {{ dpv_document_family(document='justifications-spec') }}
   </section>
   <section id="motivation">
@@ -185,6 +187,6 @@
 
 </section>
 {% endblock ACKNOWLEDGEMENTS %}
-<script type="text/javascript" src="../media/common.js" defer></script>
+<script type="text/javascript" src="../diagrams/common.js" defer></script>
 </body>
 </html>

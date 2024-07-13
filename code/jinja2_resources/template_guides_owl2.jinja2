@@ -11,7 +11,7 @@
     shortName: "guide-dpv-owl",
     title: "Using DPV in OWL2",
     publishDate: "2022-10-06",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://www.w3.org/community/reports/dpvcg/CG-FINAL-guide-dpv-owl-20221006",
     canonicalUri: "https://w3id.org/dpv/guides/dpv-owl",
@@ -48,12 +48,14 @@
     localBiblio: {%  include 'references.json' %}
   };
 </script>
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../diagrams/common.css">
+<link rel="shortcut icon" href="../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
 <section id="abstract">
     <p>This document acts as a guide presenting how [[[DPV]]], through its OWL2 encoding (i.e. [[DPV-OWL]]) can be used as an OWL2 vocabulary by easily encoding it in a low-complexity profile of OWL2 called <em>OWL2-PL</em>. </p>
-    {{ sotd() }}
+    {{ sotd(data[vocab_name+'-metadata']) }}
     {{ dpv_document_family(document='dpv-guide-owl2') }}
 </section>
 <section id="introduction">
@@ -199,6 +201,6 @@ EquivalentTo:
     <p>[2] P.A. Bonatti, L. Ioffredo, G. Luongo, S. Mosi, I.M. Petrova, L. Sauro: <em>Formalization of the GDPR and of the Pilots’ Policies</em>. SPECIAL Report D5. Available at: <a href="https://specialprivacy.ercim.eu/images/documents/report-D5.pdf">https://specialprivacy.ercim.eu/images/documents/report-D5.pdf</a></p>
     <p>[3] P.A. Bonatti, J. Langens, L. Sauro: <em>Policy Language – v1</em>. TRAPEZE Report D2.1. Available at: <a href="https://trapeze-project.eu/resources/">https://trapeze-project.eu/resources/</a></p>
 </section>
-<script type="text/javascript" src="../media/common.js" defer></script>
+<script type="text/javascript" src="../diagrams/common.js" defer></script>
 </body>
 </html>

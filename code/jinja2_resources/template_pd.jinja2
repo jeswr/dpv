@@ -14,7 +14,7 @@
     title: "{{data[vocab_name+'-metadata']['dct:title']}} ({{vocab_name|upper}})",
     subtitle: "version {{data[vocab_name+'-metadata']['schema:version']}}",
     publishDate: "{{data[vocab_name+'-metadata']['dct:modified']}}",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/pd",
     canonicalUri: "https://w3id.org/dpv/pd",
@@ -41,8 +41,8 @@
         "key": "This Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v2.0/pd",
-              "href": "https://w3id.org/dpv/v2.0/pd"
+              "value": "https://w3id.org/dpv/2.0/pd",
+              "href": "https://w3id.org/dpv/2.0/pd"
             }
         ]
       },
@@ -50,8 +50,8 @@
         "key": "Previous Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v1.0/dpv-pd",
-              "href": "https://w3id.org/dpv/v1.0/dpv-pd"
+              "value": "https://w3id.org/dpv/1.0/dpv-pd",
+              "href": "https://w3id.org/dpv/1.0/dpv-pd"
             }
         ]
       },
@@ -73,13 +73,15 @@
   };
 </script>
 {% endblock RESPEC %}
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../diagrams/common.css">
+<link rel="shortcut icon" href="../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
 {% block ABSTRACT %}
   <section id="abstract">
     <p>The Personal Data (PD) extension provides additional concepts to represent different types and categories of personal data for use with the [[[DPV]]]. The canonical URL for PD extension is <a href="https://w3id.org/dpv/pd">https://w3id.org/dpv/pd</a> and the namespace for terms is <a href="https://w3id.org/dpv/pd#"><code>https://w3id.org/dpv/pd#</code></a>, the suggested prefix is <code>pd</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
-    {{ sotd() }}
+    {{ sotd(data[vocab_name+'-metadata']) }}
     {{ dpv_document_family(document='pd-spec') }}
   </section>
 {% endblock ABSTRACT %}
@@ -89,6 +91,10 @@
 {% block VOCAB %}
   <section id="vocab-core">
     <h2>Categorisation of Concepts</h2>
+    <figure>
+      <img src="../diagrams/PD.png">
+      <figcaption></figcaption>
+    </figure>
     <p>[[[PD]]] provides additional concepts that extend the DPV's personal data taxonomy based on an opinionated structure contributed by R. Jason Cronk from <a href="https://enterprivacy.com/">EnterPrivacy</a>. This separation is to enable adopters to decide whether the extension's concepts are useful to them, or to use other external vocabularies, or define their own.</p>
     <aside class="note" title="Relation to Other Vocabularies">
       <p>DPV's list of concepts is not universal nor exhaustive. It also is opinionated in that there are other vocabularies with different perspectives on categorisation of personal data concepts. The DPVCG welcomes discussions and contributions to identify and represent other external vocabularies, including how they relate to the PD extension.</p>
@@ -205,6 +211,6 @@
 
 {# <section class="appendix" id="issue-summary"></section> #}
 
-<script type="text/javascript" src="../media/common.js" defer></script>
+<script type="text/javascript" src="../diagrams/common.js" defer></script>
 </body>
 </html>

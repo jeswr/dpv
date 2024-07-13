@@ -12,7 +12,7 @@
     title: "Guide for using DPV for GDPR's Data Breach notices, records, and assessments",
     subtitle: "Work in Progress",
     publishDate: "2024-07-01",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/guides/gdpr-data-breach",
     canonicalUri: "https://w3id.org/dpv/guides/gdpr-data-breach",
@@ -44,13 +44,15 @@
     localBiblio: {%  include 'references.json' %}
   };
 </script>
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../diagrams/common.css">
+<link rel="shortcut icon" href="../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
 {% block ABSTRACT %}
     <section id="abstract">
         <p>This document provides guidance for representing information associated with data breaches using the [[[DPV]]]. Such information includes details about the breach event, its detection, preliminary and subsequent investigations, notifications and communications, risk and impact assessments, and mitigations.</p>
-      {{ sotd() }}
+      {{ sotd(data[vocab_name+'-metadata']) }}
       {{ dpv_document_family(document='dpv-spec') }}
     </section>
     {% endblock ABSTRACT %}
@@ -638,6 +640,6 @@ ex:ParentController a dpv:DataController ;
 
 </section>
 {% endblock ACKNOWLEDGEMENTS %}
-<script type="text/javascript" src="../../media/common.js" defer></script>
+<script type="text/javascript" src="../../diagrams/common.js" defer></script>
 </body>
 </html>

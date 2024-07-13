@@ -16,7 +16,7 @@
     title: "{{data[vocab_name+'-metadata']['dct:title']}} ({{vocab_name|upper}})",
     subtitle: "version {{data[vocab_name+'-metadata']['schema:version']}}",
     publishDate: "{{data[vocab_name+'-metadata']['dct:modified']}}",
-    specStatus: "CG-FINAL",
+    specStatus: "{{DOCUMENT_STATUS}}",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/risk",
     canonicalUri: "https://w3id.org/dpv/risk",
@@ -43,8 +43,8 @@
         "key": "This Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v2.0/risk",
-              "href": "https://w3id.org/dpv/v2.0/risk"
+              "value": "https://w3id.org/dpv/2.0/risk",
+              "href": "https://w3id.org/dpv/2.0/risk"
             }
         ]
       },
@@ -52,8 +52,8 @@
         "key": "Previous Release",
         "data": [
             {
-              "value": "https://w3id.org/dpv/v1.0/risk",
-              "href": "https://w3id.org/dpv/v1.0/risk"
+              "value": "https://w3id.org/dpv/1.0/risk",
+              "href": "https://w3id.org/dpv/1.0/risk"
             }
         ]
       },
@@ -74,13 +74,15 @@
     localBiblio: {%  include 'references.json' %}
   };
 </script>
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../diagrams/common.css">
+<link rel="shortcut icon" href="../diagrams/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+  <link rel="shortcut icon" href="../diagrams/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
 </head>
 <body>
   {% block ABSTRACT %}
   <section id="abstract">
     <p>The RISK extension to [[[DPV]]] provides concepts for representing information associated with risk management, assessment, controls, and consequences. The namespace for terms in risk is <a href="http://www.w3id.org/dpv/risk#"><code>https://www.w3id.org/dpv/risk#</code></a>. The suggested prefix for the namespace is <code>risk</code>. The risk vocabulary and its documentation is available on <a href="https://github.com/w3c/dpv">GitHub</a>.</p>
-    {{ sotd() }}
+    {{ sotd(data[vocab_name+'-metadata']) }}
     {{ dpv_document_family(document='dpv-pd-spec') }}
   </section>
 {% endblock ABSTRACT %}
@@ -108,6 +110,10 @@
 
   <section id="vocab-core">
     <h2>Core Concepts</h2>
+    <figure>
+      <img src="../diagrams/risk_management.png">
+      <figcaption>Overview of Risk Assessment and Management concepts in DPV and RISK extension</figcaption>
+    </figure>
     <p>The core concepts involves reuse of the following concepts from [[DPV]]:</p>
     <ul>
       <li><a href="https://w3id.org/dpv#Risk"><code>dpv:Risk</code></a> represents the concept of 'risk' i.e. a possibility or potential of negative events to occur, and is indicated using the relation <a href="https://w3id.org/dpv#hasRisk"><code>dpv:hasRisk</code></a>.</li>
@@ -288,6 +294,6 @@
 </section>
 {% endblock ACKNOWLEDGEMENTS %}
 
-<script type="text/javascript" src="../media/common.js" defer></script>
+<script type="text/javascript" src="../diagrams/common.js" defer></script>
 </body>
 </html>

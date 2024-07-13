@@ -16,13 +16,16 @@
 # -O output file
 # unzip -l file to view list of files
 
-VERSION="v2.0"
+VERSION="2.0"
 # TODO: create 2 zips - for v1 and v2
 # TODO: add README to each v1 and v2 explaining the folder structure and the files contained in it
 
 cd ..
 mkdir -p releases
+mv $VERSION dpv
+zip -q releases/dpv.zip -r dpv
+mv dpv $VERSION
+cd code
 
-# 1. dpv.zip - DPV + Extensions as SKOS vocabulary
-zip -q releases/dpv.zip -r $VERSION/dpv $VERSION/ai $VERSION/justifications $VERSION/legal $VERSION/loc $VERSION/pd $VERSION/risk $VERSION/tech
 echo "generated releases/dpv.zip"
+# END
